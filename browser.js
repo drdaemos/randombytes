@@ -24,7 +24,7 @@ function randomBytes (size, cb) {
     crypto.getRandomValues(rawBytes)
   }
   // phantomjs doesn't like a buffer being passed here
-  var bytes = new Buffer(rawBytes.buffer)
+  var bytes = new Buffer(rawBytes)
 
   if (typeof cb === 'function') {
     return process.nextTick(function () {
